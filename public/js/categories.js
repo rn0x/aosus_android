@@ -38,7 +38,7 @@ export default async () => {
 
             li.addEventListener("click", async e => {
                 storage.setItem("slug", item?.slug);
-                window.location.href = "/posts.html";
+                window.location.href = "/aosus_android/posts.html";
             });
 
         }

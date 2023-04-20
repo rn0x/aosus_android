@@ -14,15 +14,15 @@ export default async () => {
         let create_posts = document.getElementById("create_posts");
 
         index.addEventListener("click", e => { 
-            window.location.href = "/index.html"
+            window.location.href = "/aosus_android/index.html"
         });
 
         categories.addEventListener("click", e => { 
-            window.location.href = "/categories.html"
+            window.location.href = "/aosus_android/categories.html"
         });
 
         create_posts.addEventListener("click", e => { 
-            window.location.href = "/create_posts.html"
+            window.location.href = "/aosus_android/create_posts.html"
         });
 
     } catch (error) {

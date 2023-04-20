@@ -16,7 +16,7 @@ export default async () => {
     head_back.addEventListener("click", e => {
         storage.removeItem("PublicKey");
         storage.removeItem("PrivateKey");
-        window.location.href = "/index.html";
+        window.location.href = "/aosus_android/index.html";
     });
 
     let decrypt = "";
@@ -33,7 +33,7 @@ export default async () => {
                 storage.removeItem("PublicKey");
                 storage.removeItem("PrivateKey");
                 storage.setItem("token", JSON.parse(decrypt)?.key);
-                window.location.href = "/index.html";
+                window.location.href = "/aosus_android/index.html";
             }
 
             else {

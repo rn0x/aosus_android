@@ -66,7 +66,7 @@ export default async () => {
                         storage.setItem("PublicKey", PublicKey);
                         storage.setItem("PrivateKey", PrivateKey);
                         window.open(buildUrl(PublicKey), "_blank");
-                        window.location.href = "/login.html"
+                        window.location.href = "/aosus_android/login.html"
                     }
                 }
 
@@ -75,7 +75,7 @@ export default async () => {
                     storage.setItem("PublicKey", PublicKey);
                     storage.setItem("PrivateKey", PrivateKey);
                     window.open(buildUrl(PublicKey), "_blank");
-                    window.location.href = "/login.html"
+                    window.location.href = "/aosus_android/login.html"
                 }
             });
 

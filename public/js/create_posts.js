@@ -101,7 +101,7 @@ export default async () => {
 
                         else {
                             showAlert(alert, alert_content, "نُشِر الموضوع");
-                            window.location.href = "/index.html";
+                            window.location.href = "/aosus_android/index.html";
                         }
 
                     }

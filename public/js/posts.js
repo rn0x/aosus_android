@@ -15,7 +15,7 @@ export default async () => {
         head_back.addEventListener("click", e => {
 
             storage.removeItem("slug");
-            window.location.href = "/categories.html";
+            window.location.href = "/aosus_android/categories.html";
 
         });
 
@@ -61,7 +61,7 @@ export default async () => {
 
             posts.addEventListener("click", e => { 
                 storage.setItem("posts_id", getPosts?.id);
-                window.location.href = "/posts_content.html";
+                window.location.href = "/aosus_android/posts_content.html";
             });
         }
 
@@ -112,7 +112,7 @@ export default async () => {
 
                 posts.addEventListener("click", e => { 
                     storage.setItem("posts_id", getPosts?.id);
-                    window.location.href = "/posts_content.html";
+                    window.location.href = "/aosus_android/posts_content.html";
                 });
             }
 

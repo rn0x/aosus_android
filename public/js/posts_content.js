@@ -18,7 +18,7 @@ export default async () => {
         head_back.style = "display:block !important;";
         head_back.addEventListener("click", e => {
             storage.removeItem("posts_id");
-            window.location.href = "/posts.html";
+            window.location.href = "/aosus_android/posts.html";
         });
 
         let getPosts = await loadJson(`${config?.backend_url}/getPosts?id=${posts_id}`);
