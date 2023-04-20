@@ -6,7 +6,7 @@ export default async () => {
 
         let storage = window.localStorage;
         let token = storage.getItem('token');
-        let config = await loadJson(`/public/json/config.json`);
+        let config = await loadJson(`/aosus_android/public/json/config.json`);
         let categories = await loadJson(`${config?.backend_url}/categories`);
         let categories_box = document.getElementById("categories_box");
         let categories_posts = document.getElementById("categories_posts");

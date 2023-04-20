@@ -6,7 +6,7 @@ export default async () => {
 
         let storage = window.localStorage;
         let slug = storage.getItem('slug');
-        let config = await loadJson(`/public/json/config.json`);
+        let config = await loadJson(`/aosus_android/public/json/config.json`);
         let head_back = document.getElementById("head_back");
         let more = document.getElementById("more");
         let loding = document.getElementById("loding");

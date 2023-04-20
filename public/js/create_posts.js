@@ -6,7 +6,7 @@ export default async () => {
 
         let storage = window.localStorage;
         let token = storage.getItem('token');
-        let config = await loadJson(`/public/json/config.json`);
+        let config = await loadJson(`/aosus_android/public/json/config.json`);
         let alert = document.getElementById("alert");
         let alert_content = document.getElementById("alert_content");
         let input_file = document.getElementById("input_file");

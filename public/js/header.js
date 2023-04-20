@@ -106,12 +106,12 @@ export default async () => {
                 }
 
                 else {
-                    headUserDiv.src = "/public/image/user.png";
+                    headUserDiv.src = "/aosus_android/public/image/user.png";
                 }
             }
 
             else {
-                headUserDiv.src = "/public/image/user.png";
+                headUserDiv.src = "/aosus_android/public/image/user.png";
             }
         }
 

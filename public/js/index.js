@@ -6,7 +6,7 @@ export default async () => {
 
         let storage = window.localStorage;
         let token = storage.getItem('token');
-        let config = await loadJson(`/public/json/config.json`);
+        let config = await loadJson(`/aosus_android/public/json/config.json`);
         let latest = await loadJson(`${config?.backend_url}/latest`);
         let topic = document.getElementById("topic");
         let topic_div = document.getElementById("topic_div");
