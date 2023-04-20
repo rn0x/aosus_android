@@ -1,0 +1,62 @@
+#loginLink>h2 {
+    display: block;
+    width: 90%;
+    text-align: center;
+    font-size: 14px;
+    color: var(--fontColorDefaulte);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+#encrypted_key {
+    display: block;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    border-radius: 7px;
+    background-color: var(--white);
+    padding: 8px;
+    border: none;
+    direction: ltr;
+}
+
+#encrypted_key:focus {
+    outline: none;
+}
+
+#loginLink>button {
+    display: block;
+    width: 200px;
+    font-size: 14px;
+    font-family: var(--fontFamilyDefault);
+    background-color: var(--white);
+    color: var(--fontColorDefaulte);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 7px;
+    padding: 5px;
+    box-shadow: #11111a0d 0px 1px 0px, #11111a1a 0px 0px 8px;
+    border-top-color: var(--borderColorDefaulte);
+    border-top-style: solid;
+    border-top-width: 1px;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+#loginLink>button:hover {
+    width: 220px;
+    padding: 6px;
+    transition: 0.5s ease-in-out;
+}
+
+#loginLink>button:focus {
+    width: 220px;
+    padding: 6px;
+    transition: 0.5s ease-in-out;
+}

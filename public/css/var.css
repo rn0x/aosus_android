@@ -1,0 +1,15 @@
+:root {
+    --fontFamilyDefault: "NotoKufiArabic-Regular";
+    --fontFamilyDefault_Medium: "NotoKufiArabic-Medium";
+    --fontFamilyDefault_Light: "NotoKufiArabic-Light";
+    --fontSizeDefault: 16px;
+    --fontColorDefaulte: #252525;
+    --fontColorGrey: #646464;
+    --background: #ebebeb;
+    --backgroundDefaulte: #f3f4f6;
+    --backgroundHover: #e6e8ec;
+    --borderColorDefaulte: #ececec;
+    --borderColorBlack: #000;
+    --borderColorGrey: #d1d1d1;
+    --white: #ffffff;
+}
