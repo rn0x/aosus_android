@@ -54,7 +54,7 @@ async function main() {
             break;
 
         default:
-            window.location.href = "/aosus_android/aosus_android/index.html";
+            window.location.href = "/aosus_android/index.html";
             break;
     }
 }
