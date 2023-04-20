@@ -6,11 +6,11 @@ export default async () => {
     try {
 
         let header = document.getElementById('header');
-        let fileHtml = "/header.html";
+        let fileHtml = "/aosus_android/header.html";
         let load = await loadHtml(fileHtml);
         header.innerHTML = load;
 
-        let config = await loadJson(`/public/json/config.json`);
+        let config = await loadJson(`/aosus_android/public/json/config.json`);
         let storage = window.localStorage;
         let token = storage.getItem('token');
         let avatar = storage.getItem('avatar');

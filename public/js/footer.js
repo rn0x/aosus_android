@@ -5,7 +5,7 @@ export default async () => {
     try {
 
         let footer = document.getElementById('footer');
-        let fileHtml = "/footer.html";
+        let fileHtml = "/aosus_android/footer.html";
         let load = await loadHtml(fileHtml);
         footer.innerHTML = load;
 
