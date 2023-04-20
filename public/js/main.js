@@ -7,16 +7,9 @@ import posts from './posts.js';
 import posts_content from './posts_content.js';
 import create_posts from './create_posts.js';
 
-if (typeof cordova !== 'undefined') {
+console.log(window.location.pathnam);
 
-    document.addEventListener('deviceready', async (e) => {
-        await main();
-    });
-}
-
-else {
-    await main();
-}
+await main();
 
 async function main() {
 
@@ -25,44 +18,44 @@ async function main() {
 
     switch (window.location.pathname) {
 
-        case "/index.html":
+        case "/aosus_android/index.html":
 
             await index();
 
             break;
 
-        case "/login.html":
+        case "/aosus_android/login.html":
 
             await login();
 
             break;
 
-        case "/categories.html":
+        case "/aosus_android/categories.html":
 
             await categories();
 
             break;
 
-        case "/posts.html":
+        case "/aosus_android/posts.html":
 
             await posts();
 
             break;
 
-        case "/posts_content.html":
+        case "/aosus_android/posts_content.html":
 
             await posts_content();
 
             break;
 
-        case "/create_posts.html":
+        case "/aosus_android/create_posts.html":
 
             await create_posts();
 
             break;
 
         default:
-            window.location.href = "/index.html";
+            window.location.href = "/aosus_android/index.html";
             break;
     }
 }
