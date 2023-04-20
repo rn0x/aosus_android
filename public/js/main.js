@@ -7,7 +7,6 @@ import posts from './posts.js';
 import posts_content from './posts_content.js';
 import create_posts from './create_posts.js';
 
-console.log(window.location.pathnam);
 
 await main();
 
