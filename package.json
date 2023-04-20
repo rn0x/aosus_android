@@ -1,0 +1,38 @@
+{
+  "name": "com.aosus.discourse",
+  "displayName": "مجتمع أسس",
+  "version": "1.0.0",
+  "description": "مجتمع أسس يهدف لنشر وإثراء ثقافة البرمجيات الحرة والمفتوحة في العالم العربي, ولتسهيل المساهمة والمشاركة فيها",
+  "main": "index.js",
+  "scripts": {
+    "dev": "browser-sync start -s www/ --watch --port 8080 --ui-port 8081",
+    "device": "cordova run android --device",
+    "build": "cordova build android --release",
+    "bundle": "cordova build android --release -- --packageTypjetifiere=bundle",
+    "android": "cordova platform add android@latest",
+    "clear": "rm -rf ./node_modules && cordova platforms rm android && npm cache clean --force && npm i && cordova platform add android@latest",
+    "keytool": "keytool -genkey -v -keystore ./debug.keystore -alias 'aosus' -storepass '11223344' -keypass '11223344' -keyalg RSA -keysize 2048 -dname 'CN=aosus, OU=aosus, O=aosus, L=makkah, ST=makkah, C=sa'"
+  },
+  "author": {
+    "name": "aosus",
+    "email": "contact@aosus.org",
+    "url": "https://aosus.org"
+  },
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "browser-sync": "^2.28.3",
+    "cordova": "^11.1.0",
+    "cordova-android": "^11.0.0",
+    "cordova-plugin-navigationbar-color": "^0.1.0",
+    "cordova-plugin-statusbar": "^3.0.0"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-navigationbar-color": {}
+    },
+    "platforms": [
+      "android"
+    ]
+  }
+}

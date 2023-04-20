@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.aosus.discourse" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>مجتمع أٍسس</name>
+    <description>مجتمع أسس يهدف لنشر وإثراء ثقافة البرمجيات الحرة والمفتوحة في العالم العربي, ولتسهيل المساهمة والمشاركة فيها</description>
+    <author email="contact@aosus.org" href="https://aosus.org">
+        Aosus
+    </author>
+    <content src="index.html" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <preference name="AndroidXEnabled" value="true" />
+    <preference name="KeepRunning" value="true" />
+    <preference name="loglevel" value="DEBUG" />
+    <preference name="Fullscreen" value="false" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarBackgroundColor" value="#ffffff" />
+    <preference name="StatusBarStyle" value="default" />
+    <preference name="NavigationBarLight" value="true" />
+    <preference name="Orientation" value="portrait" />
+    <preference name="BackgroundColor" value="#ffffff" />
+    <preference name="HideKeyboardFormAccessoryBar" value="true" />
+    <preference name="NavigationBarBackgroundColor" value="#ffffff" />
+    <preference name="android-compileSdkVersion" value="32" />
+    <preference name="SplashScreenBackgroundColor" value="#ffffff" />
+    <platform name="android">
+        <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
+        <icon density="mdpi" src="resources/android/icon/drawable-mdpi-icon.png" />
+        <icon density="hdpi" src="resources/android/icon/drawable-hdpi-icon.png" />
+        <icon density="xhdpi" src="resources/android/icon/drawable-xhdpi-icon.png" />
+        <icon density="xxhdpi" src="resources/android/icon/drawable-xxhdpi-icon.png" />
+        <icon density="xxxhdpi" src="resources/android/icon/drawable-xxxhdpi-icon.png" />
+        <preference name="AndroidWindowSplashScreenAnimatedIcon" value="resources/splash.png" />
+        <preference name="AndroidWindowSplashScreenBackground" value="#ffffff" />
+    </platform>
+</widget>
