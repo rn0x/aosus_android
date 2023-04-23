@@ -1,7 +1,7 @@
 {
   "name": "com.aosus.discourse",
   "displayName": "مجتمع أسس",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "مجتمع أسس يهدف لنشر وإثراء ثقافة البرمجيات الحرة والمفتوحة في العالم العربي, ولتسهيل المساهمة والمشاركة فيها",
   "main": "index.js",
   "scripts": {
