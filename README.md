@@ -2,10 +2,14 @@
   
 https://play.google.com/store/apps/details?id=org.aosus.discourse
 
-![Firefox_Screenshot_2024-03-13T00-55-48 100Z](https://github.com/rn0x/aosus_android/assets/76129163/670df5a9-16ae-481f-a86e-51072c3240f6)
+![photo_1_2024-03-13_18-12-33](https://github.com/rn0x/aosus_android/assets/76129163/9a4f6130-81f7-4010-9fa6-e18b57539259)
 
--------
-![Firefox_Screenshot_2024-03-13T00-55-21 604Z](https://github.com/rn0x/aosus_android/assets/76129163/14db9494-e9b3-4194-bf8e-9039b51abf14)
+![photo_2_2024-03-13_18-12-33](https://github.com/rn0x/aosus_android/assets/76129163/f1d9cd3f-892f-45dc-84dd-5edc5334e403)
+
+![photo_3_2024-03-13_18-12-33](https://github.com/rn0x/aosus_android/assets/76129163/44f7b82f-e7dc-4672-9413-701941867b97)
+
+![photo_4_2024-03-13_18-12-33](https://github.com/rn0x/aosus_android/assets/76129163/f89a2585-ae76-4df8-9e01-340d971e08c0)
+
 
 
 </div>
