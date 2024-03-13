@@ -21,7 +21,7 @@
     <preference name="BackgroundColor" value="#ffffff" />
     <preference name="HideKeyboardFormAccessoryBar" value="true" />
     <preference name="NavigationBarBackgroundColor" value="#ffffff" />
-    <preference name="android-compileSdkVersion" value="32" />
+    <preference name="android-compileSdkVersion" value="33" />
     <preference name="SplashScreenBackgroundColor" value="#ffffff" />
     <platform name="android">
         <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
