@@ -1,14 +1,12 @@
 <div align="center">
   
 https://play.google.com/store/apps/details?id=org.aosus.discourse
-  
-![aosus](/screenshots/1.jpg)
-![aosus](/screenshots/2.jpg)
-![aosus](/screenshots/3.jpg)
-![aosus](/screenshots/4.jpg)
-![aosus](/screenshots/5.jpg)
-![aosus](/screenshots/6.jpg)
-![aosus](/screenshots/7.jpg)
+
+![Firefox_Screenshot_2024-03-13T00-55-48 100Z](https://github.com/rn0x/aosus_android/assets/76129163/670df5a9-16ae-481f-a86e-51072c3240f6)
+
+-------
+![Firefox_Screenshot_2024-03-13T00-55-21 604Z](https://github.com/rn0x/aosus_android/assets/76129163/14db9494-e9b3-4194-bf8e-9039b51abf14)
+
 
 </div>
 
