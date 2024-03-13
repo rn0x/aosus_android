@@ -6,8 +6,9 @@ export default async () => {
 
         const storage = window.localStorage;
         const slug = storage.getItem('slug');
-        const configLoad = await loadJson(`https://raw.githubusercontent.com/rn0x/aosus_android/main/www/public/json/config.json`);
-        const config = JSON.parse(configLoad);
+        const configLoad = await fetch(`https://raw.githubusercontent.com/rn0x/aosus_android/main/www/public/json/config.json`);
+        const configData = await configLoad.text();
+        const config = JSON.parse(configData);
         const head_back = document.getElementById("head_back");
         const more = document.getElementById("more");
         const loding = document.getElementById("loding");

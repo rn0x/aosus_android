@@ -4,8 +4,9 @@ export default async () => {
 
     try {
 
-        const configLoad = await loadJson(`https://raw.githubusercontent.com/rn0x/aosus_android/main/www/public/json/config.json`);
-        const config = JSON.parse(configLoad);
+        const configLoad = await fetch(`https://raw.githubusercontent.com/rn0x/aosus_android/main/www/public/json/config.json`);
+        const configData = await configLoad.text();
+        const config = JSON.parse(configData);
         // تكوين العنوان URL باستخدام البروكسي
         const apiUrl = `${config?.proxyUrl}${encodeURIComponent(`${config?.url}/latest.json?order=created`)}`;
 

@@ -6,8 +6,9 @@ export default async () => {
 
         const storage = window.localStorage;
         const token = storage.getItem('token');
-        const configLoad = await loadJson(`https://raw.githubusercontent.com/rn0x/aosus_android/main/www/public/json/config.json`);
-        const config = JSON.parse(configLoad);
+        const configLoad = await fetch(`https://raw.githubusercontent.com/rn0x/aosus_android/main/www/public/json/config.json`);
+        const configData = await configLoad.text();
+        const config = JSON.parse(configData);
         const categoriesLoad = await loadJson(`${config?.proxyUrl}${config?.url}/categories.json`);
         const categoriesJson = JSON.parse(categoriesLoad?.contents);
         const categories = []
