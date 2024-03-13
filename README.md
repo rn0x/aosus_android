@@ -1,6 +1,6 @@
 <div align="center">
   
-![aosusApp](https://github.com/rn0x/aosus_android/assets/76129163/ef3a88de-f465-4dfb-941b-11ea44e8215d)
+![aosusApp](https://github.com/rn0x/aosus_android/assets/76129163/83a350b5-4f51-44bd-9769-fc82faf45d94)
   
 ![Badge](https://img.shields.io/github/v/release/rn0x/aosus_android)
 ![GitHub all releases](https://img.shields.io/github/downloads/rn0x/aosus_android/total?color=blue&label=Total%20Downloads)
