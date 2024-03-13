@@ -197,7 +197,7 @@ export default async () => {
 
 async function getPosts(config, slug) {
     let posts = [];
-    for (let index = 1; index < 100; index++) {
+    for (let index = 0; index < 100; index++) {
         try {
             const response = await loadJson(`${config?.proxyUrl}${config?.url}/c/${slug}/l/latest.json?page=${index}`);
             const data = JSON.parse(response?.contents);
