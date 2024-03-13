@@ -4,24 +4,44 @@ export default async () => {
 
     try {
 
-        let storage = window.localStorage;
-        let token = storage.getItem('token');
-        let config = await loadJson(`/public/json/config.json`);
-        let categories = await loadJson(`${config?.backend_url}/categories`);
-        let categories_box = document.getElementById("categories_box");
-        let categories_posts = document.getElementById("categories_posts");
-        let posts_div = document.getElementById("posts_div");
-        let posts_content = document.getElementById("posts_content");
-        let head_back = document.getElementById("head_back");
-        let loding = document.getElementById("loding");
+        const storage = window.localStorage;
+        const token = storage.getItem('token');
+        const configLoad = await loadJson(`https://raw.githubusercontent.com/rn0x/aosus_android/main/www/public/json/config.json`);
+        const config = JSON.parse(configLoad);
+        const categoriesLoad = await loadJson(`${config?.proxyUrl}${config?.url}/categories.json`);
+        const categoriesJson = JSON.parse(categoriesLoad?.contents);
+        const categories = []
+        for (let item of categoriesJson?.category_list?.categories) {
+            if (item?.read_restricted === false) {
+                const opj = {
+
+                    id: item?.id,
+                    name: item?.name,
+                    slug: item?.slug,
+                    description: item?.description,
+                    topics_day: item?.topics_day,
+                    topics_week: item?.topics_week,
+                    topics_month: item?.topics_month,
+                    topics_all_time: item?.topics_all_time,
+
+                }
+                categories.push(opj)
+            }
+        }
+        const categories_box = document.getElementById("categories_box");
+        const categories_posts = document.getElementById("categories_posts");
+        const posts_div = document.getElementById("posts_div");
+        const posts_content = document.getElementById("posts_content");
+        const head_back = document.getElementById("head_back");
+        const loding = document.getElementById("loding");
 
         for (let item of categories) {
 
-            let li = document.createElement("li");
-            let category = document.createElement("div");
-            let topics_all_time = document.createElement("h3");
-            let category_name = document.createElement("h2");
-            let category_description = document.createElement("p");
+            const li = document.createElement("li");
+            const category = document.createElement("div");
+            const topics_all_time = document.createElement("h3");
+            const category_name = document.createElement("h2");
+            const category_description = document.createElement("p");
 
             categories_box.appendChild(li);
             li.appendChild(category);
@@ -53,16 +73,16 @@ export default async () => {
 
         function fixd_text(text) {
 
-            let toHtml = document.createElement("div");
+            const toHtml = document.createElement("div");
             toHtml.innerHTML = text;
-            let aside_article_p = toHtml.querySelectorAll("aside > article > p");
+            const aside_article_p = toHtml.querySelectorAll("aside > article > p");
             aside_article_p.forEach(el => el.remove());
-            let aside_header = toHtml.querySelectorAll("aside > header");
+            const aside_header = toHtml.querySelectorAll("aside > header");
             aside_header.forEach(el => el.remove());
-            let meta = toHtml.querySelectorAll("div.meta");
+            const meta = toHtml.querySelectorAll("div.meta");
             meta.forEach(el => el.remove());
 
-            let fixd = toHtml.innerHTML?.replace(/(\s*<br\s*\/?>){3}/g, '')
+            const fixd = toHtml.innerHTML?.replace(/(\s*<br\s*\/?>){3}/g, '')
                 ?.split(`<a class="mention" href="/`)?.join(`<a class="mention" href="${config?.url}/`) // إضافة رابط مجتمع أسس
                 ?.split(`href="/`)?.join(`href="${config?.url}/`) // إضافة رابط مجتمع أسس
                 ?.replace(/<svg.*?>|<\/svg>/g, '') // حذف التاق svg

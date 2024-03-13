@@ -153,3 +153,8 @@ table {
     width: 100%;
     overflow: auto;
 }
+
+#copyright {
+    font-size: 10px;
+    text-align: center;
+}

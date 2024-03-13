@@ -4,12 +4,13 @@ export default async () => {
 
     try {
 
-        let storage = window.localStorage;
-        let slug = storage.getItem('slug');
-        let config = await loadJson(`/public/json/config.json`);
-        let head_back = document.getElementById("head_back");
-        let more = document.getElementById("more");
-        let loding = document.getElementById("loding");
+        const storage = window.localStorage;
+        const slug = storage.getItem('slug');
+        const configLoad = await loadJson(`https://raw.githubusercontent.com/rn0x/aosus_android/main/www/public/json/config.json`);
+        const config = JSON.parse(configLoad);
+        const head_back = document.getElementById("head_back");
+        const more = document.getElementById("more");
+        const loding = document.getElementById("loding");
 
         head_back.style = "display:block !important;";
         head_back.addEventListener("click", e => {
@@ -19,14 +20,32 @@ export default async () => {
 
         });
 
-        let posts = await loadJson(`${config?.backend_url}/PostCategory?slug=${slug}`);
+        const posts = await getPosts(config, slug);
 
         let from = 4;
         let to = 7;
 
         for (let iterator of posts?.slice(0, 4)) {
 
-            let getPosts = await loadJson(`${config?.backend_url}/getPosts?id=${iterator?.id}`);
+            const getPostsLoad = await loadJson(`${config?.proxyUrl}${config?.url}/t/${iterator?.id}.json`);
+            const getPostsJson = JSON.parse(getPostsLoad?.contents);
+            const replies = [];
+            for (let index = 1; index < getPostsJson?.post_stream?.posts.length; index++) {
+                const element = getPostsJson?.post_stream?.posts[index];
+                replies.push(element);
+
+            }
+            const getPosts = {
+                id: getPostsJson?.id,
+                title: getPostsJson?.title,
+                views: getPostsJson?.views,
+                like_count: getPostsJson?.like_count,
+                reply_count: getPostsJson?.like_count,
+                closed: getPostsJson?.closed,
+                image_url: getPostsJson?.image_url,
+                post: getPostsJson?.post_stream?.posts?.[0],
+                replies: replies
+            }
             let posts = document.createElement("li");
             let posts_img = document.createElement("img");
             let posts_title = document.createElement("h2");
@@ -59,7 +78,7 @@ export default async () => {
             topic_like_li.appendChild(topic_like_img);
             topic_like_img.src = "./public/image/like.png";
 
-            posts.addEventListener("click", e => { 
+            posts.addEventListener("click", e => {
                 storage.setItem("posts_id", getPosts?.id);
                 window.location.href = "/posts_content.html";
             });
@@ -77,17 +96,35 @@ export default async () => {
 
             for (let iterator of GetArray) {
 
-                let getPosts = await loadJson(`${config?.backend_url}/getPosts?id=${iterator?.id}`);
-                let posts = document.createElement("li");
-                let posts_img = document.createElement("img");
-                let posts_title = document.createElement("h2");
-                let topic_info = document.createElement("ul");
-                let topic_views_li = document.createElement("li");
-                let topic_views_p = document.createElement("p");
-                let topic_views_img = document.createElement("img");
-                let topic_like_li = document.createElement("li");
-                let topic_like_p = document.createElement("p");
-                let topic_like_img = document.createElement("img");
+                const getPostsLoad = await loadJson(`${config?.proxyUrl}${config?.url}/t/${iterator?.id}.json`);
+                const getPostsJson = JSON.parse(getPostsLoad?.contents);
+                const replies = [];
+                for (let index = 1; index < getPostsJson?.post_stream?.posts.length; index++) {
+                    const element = getPostsJson?.post_stream?.posts[index];
+                    replies.push(element);
+
+                }
+                const getPosts = {
+                    id: getPostsJson?.id,
+                    title: getPostsJson?.title,
+                    views: getPostsJson?.views,
+                    like_count: getPostsJson?.like_count,
+                    reply_count: getPostsJson?.like_count,
+                    closed: getPostsJson?.closed,
+                    image_url: getPostsJson?.image_url,
+                    post: getPostsJson?.post_stream?.posts?.[0],
+                    replies: replies
+                }
+                const posts = document.createElement("li");
+                const posts_img = document.createElement("img");
+                const posts_title = document.createElement("h2");
+                const topic_info = document.createElement("ul");
+                const topic_views_li = document.createElement("li");
+                const topic_views_p = document.createElement("p");
+                const topic_views_img = document.createElement("img");
+                const topic_like_li = document.createElement("li");
+                const topic_like_p = document.createElement("p");
+                const topic_like_img = document.createElement("img");
 
                 categories_posts.appendChild(posts);
                 posts.id = `posts_id_${getPosts?.id}`
@@ -110,7 +147,7 @@ export default async () => {
                 topic_like_li.appendChild(topic_like_img);
                 topic_like_img.src = "./public/image/like.png";
 
-                posts.addEventListener("click", e => { 
+                posts.addEventListener("click", e => {
                     storage.setItem("posts_id", getPosts?.id);
                     window.location.href = "/posts_content.html";
                 });
@@ -154,4 +191,26 @@ export default async () => {
 
     }
 
+}
+
+
+async function getPosts(config, slug) {
+    let posts = [];
+    for (let index = 1; index < 100; index++) {
+        try {
+            const response = await loadJson(`${config?.proxyUrl}${config?.url}/c/${slug}/l/latest.json?page=${index}`);
+            const data = JSON.parse(response?.contents);
+
+            if (data?.topic_list?.topics?.length !== 0) {
+                for (let item of data?.topic_list?.topics) {
+                    posts.push(item);
+                }
+            } else {
+                break;
+            }
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    }
+    return posts;
 }

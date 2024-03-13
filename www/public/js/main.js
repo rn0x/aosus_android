@@ -1,11 +1,9 @@
 import footer from './footer.js';
 import header from './header.js';
 import index from './index.js';
-import login from './login.js';
 import categories from './categories.js';
 import posts from './posts.js';
 import posts_content from './posts_content.js';
-import create_posts from './create_posts.js';
 
 if (typeof cordova !== 'undefined') {
 
@@ -31,12 +29,6 @@ async function main() {
 
             break;
 
-        case "/login.html":
-
-            await login();
-
-            break;
-
         case "/categories.html":
 
             await categories();
@@ -52,12 +44,6 @@ async function main() {
         case "/posts_content.html":
 
             await posts_content();
-
-            break;
-
-        case "/create_posts.html":
-
-            await create_posts();
 
             break;
 
